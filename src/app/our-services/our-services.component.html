@@ -1,0 +1,117 @@
+<!-- Hero Section -->
+<section class="relative bg-gradient-to-br from-blue-600 to-purple-700 text-white py-20">
+  <div class="container mx-auto px-4">
+    <div class="text-center max-w-3xl mx-auto">
+      <h1 class="text-5xl font-bold mb-6">Our Services</h1>
+      <p class="text-xl leading-relaxed">
+        Professional repair services for all your electronic devices with certified technicians and quality parts.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Services Grid -->
+<section class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+  <div class="container mx-auto px-4">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="card bg-white shadow-xl hover:shadow-2xl transition-all" *ngFor="let service of services">
+        <figure class="px-0 pt-0">
+          <img [src]="service.image" [alt]="service.title" class="w-full h-48 object-cover">
+        </figure>
+        <div class="card-body">
+          <div class="text-4xl mb-2">{{ service.icon }}</div>
+          <h2 class="card-title text-2xl mb-3">{{ service.title }}</h2>
+          <p class="text-gray-600 mb-4">{{ service.description }}</p>
+
+          <!-- Features List -->
+          <ul class="space-y-2 mb-4">
+            <li class="flex items-center text-sm text-gray-700" *ngFor="let feature of service.features">
+              <span class="text-green-500 mr-2">✓</span>
+              {{ feature }}
+            </li>
+          </ul>
+
+          <!-- Price -->
+          <div class="badge badge-primary badge-lg mb-4">{{ service.price }}</div>
+
+          <div class="card-actions justify-end">
+            <a routerLink="/contact" class="btn btn-primary">Book Now</a>
+            <a routerLink="/pricing" class="btn btn-outline">View Pricing</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Us Section -->
+<section class="py-20 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-gray-800 mb-4">Why Choose Our Services?</h2>
+      <p class="text-xl text-gray-600">We're committed to providing the best repair experience</p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="text-center p-6" *ngFor="let reason of whyChooseUs">
+        <div class="text-5xl mb-4">{{ reason.icon }}</div>
+        <h3 class="text-xl font-bold text-gray-800 mb-2">{{ reason.title }}</h3>
+        <p class="text-gray-600">{{ reason.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Process Section -->
+<section class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-gray-800 mb-4">Our Repair Process</h2>
+      <p class="text-xl text-gray-600">Simple and transparent</p>
+    </div>
+    <div class="grid md:grid-cols-4 gap-8">
+      <div class="text-center">
+        <div
+          class="bg-blue-600 text-white text-2xl font-bold rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+          1</div>
+        <h3 class="text-xl font-bold text-gray-800 mb-2">Contact Us</h3>
+        <p class="text-gray-600">Reach out via phone, email, or visit our store</p>
+      </div>
+      <div class="text-center">
+        <div
+          class="bg-blue-600 text-white text-2xl font-bold rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+          2</div>
+        <h3 class="text-xl font-bold text-gray-800 mb-2">Diagnosis</h3>
+        <p class="text-gray-600">We'll diagnose the issue and provide a quote</p>
+      </div>
+      <div class="text-center">
+        <div
+          class="bg-blue-600 text-white text-2xl font-bold rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+          3</div>
+        <h3 class="text-xl font-bold text-gray-800 mb-2">Repair</h3>
+        <p class="text-gray-600">Expert technicians fix your device</p>
+      </div>
+      <div class="text-center">
+        <div
+          class="bg-blue-600 text-white text-2xl font-bold rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+          4</div>
+        <h3 class="text-xl font-bold text-gray-800 mb-2">Quality Check</h3>
+        <p class="text-gray-600">Thorough testing before returning to you</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-20 bg-gradient-to-r from-blue-600 to-purple-700 text-white">
+  <div class="container mx-auto px-4 text-center">
+    <h2 class="text-4xl font-bold mb-6">Need a Repair Service?</h2>
+    <p class="text-xl mb-8 max-w-2xl mx-auto">
+      Contact us today for a free diagnosis and quote. We're here to help!
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a routerLink="/contact" class="btn btn-accent btn-lg">Get Free Quote</a>
+      <a routerLink="/pricing"
+        class="btn btn-outline btn-lg text-white border-white hover:bg-white hover:text-purple-700">View All Pricing</a>
+    </div>
+  </div>
+</section>

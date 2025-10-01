@@ -1,0 +1,12 @@
+/* Our Services Component Styles */
+.card {
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.badge {
+  font-weight: 600;
+}

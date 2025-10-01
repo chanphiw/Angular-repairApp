@@ -1,0 +1,16 @@
+/* Pricing Component Styles */
+.card {
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.collapse {
+  transition: all 0.2s ease;
+}
+
+.collapse:hover {
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}

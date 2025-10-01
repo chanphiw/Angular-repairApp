@@ -1,0 +1,121 @@
+<!-- Navbar with Glass Morphism & Gradient -->
+<nav class="navbar-wrapper sticky top-0 z-50">
+  <div class="navbar-gradient"></div>
+  <div class="navbar-glass">
+    <div class="container mx-auto px-4">
+      <div class="flex items-center justify-between h-20">
+
+        <!-- Logo & Brand -->
+        <div class="flex-1">
+          <a routerLink="/" class="brand-logo group">
+            <span class="logo-icon">🔧</span>
+            <span class="brand-text">
+              <span class="text-gradient">Repair</span><span class="text-accent">App</span>
+            </span>
+            <div class="logo-underline"></div>
+          </a>
+        </div>
+
+        <div class="flex-none flex items-center gap-2">
+          <!-- Desktop Menu (Show on tablets/iPad ≥768px and above) -->
+          <ul class="menu-desktop hidden md:flex items-center gap-1">
+            <li>
+              <a routerLink="/" routerLinkActive="nav-active" [routerLinkActiveOptions]="{exact: true}"
+                class="nav-link">
+                <span class="nav-icon">🏠</span>
+                <span>Home</span>
+              </a>
+            </li>
+            <li>
+              <a routerLink="/about-us" routerLinkActive="nav-active" class="nav-link">
+                <span class="nav-icon">ℹ️</span>
+                <span>About</span>
+              </a>
+            </li>
+            <li>
+              <a routerLink="/our-services" routerLinkActive="nav-active" class="nav-link">
+                <span class="nav-icon">⚙️</span>
+                <span>Services</span>
+              </a>
+            </li>
+            <li>
+              <a routerLink="/pricing" routerLinkActive="nav-active" class="nav-link">
+                <span class="nav-icon">💰</span>
+                <span>Pricing</span>
+              </a>
+            </li>
+            <li>
+              <a routerLink="/contact" routerLinkActive="nav-active" class="nav-link">
+                <span class="nav-icon">📞</span>
+                <span>Contact</span>
+              </a>
+            </li>
+          </ul>
+
+          <!-- Auth Buttons (Desktop Only ≥1280px, hidden on iPad) -->
+          <div class="auth-buttons hidden xl:flex items-center gap-2 ml-4">
+            <a routerLink="/login" class="login-btn">
+              <span class="btn-icon">👤</span>
+              <span>Login</span>
+            </a>
+            <a routerLink="/register" class="register-btn">
+              <span class="btn-icon">✨</span>
+              <span>Sign Up</span>
+            </a>
+          </div>
+
+          <!-- Hamburger Menu Button (Show on all screens, for Login/Sign Up on iPad and full menu on mobile) -->
+          <div class="flex items-center">
+            <button (click)="toggleMenu()" class="mobile-menu-btn" [class.active]="menuOpen">
+              <span class="hamburger-line"></span>
+              <span class="hamburger-line"></span>
+              <span class="hamburger-line"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile/Tablet Menu Dropdown -->
+      <div class="mobile-menu" [class.active]="menuOpen">
+        <div class="mobile-menu-content">
+          <!-- Navigation Links (Only show on Mobile < 768px) -->
+          <div class="mobile-nav-links md:hidden">
+            <a routerLink="/" (click)="closeMenu()" routerLinkActive="mobile-active"
+              [routerLinkActiveOptions]="{exact: true}" class="mobile-link">
+              <span class="mobile-icon">🏠</span>
+              <span>Home</span>
+            </a>
+            <a routerLink="/about-us" (click)="closeMenu()" routerLinkActive="mobile-active" class="mobile-link">
+              <span class="mobile-icon">ℹ️</span>
+              <span>About Us</span>
+            </a>
+            <a routerLink="/our-services" (click)="closeMenu()" routerLinkActive="mobile-active" class="mobile-link">
+              <span class="mobile-icon">⚙️</span>
+              <span>Services</span>
+            </a>
+            <a routerLink="/pricing" (click)="closeMenu()" routerLinkActive="mobile-active" class="mobile-link">
+              <span class="mobile-icon">💰</span>
+              <span>Pricing</span>
+            </a>
+            <a routerLink="/contact" (click)="closeMenu()" routerLinkActive="mobile-active" class="mobile-link">
+              <span class="mobile-icon">📞</span>
+              <span>Contact</span>
+            </a>
+          </div>
+
+          <!-- Auth Buttons (Show on all devices in hamburger menu when < 1280px) -->
+          <div class="mobile-auth">
+            <a routerLink="/login" (click)="closeMenu()" class="mobile-auth-button login">
+              <span class="mobile-icon">👤</span>
+              <span>Login</span>
+            </a>
+            <a routerLink="/register" (click)="closeMenu()" class="mobile-auth-button register">
+              <span class="mobile-icon">✨</span>
+              <span>Sign Up</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

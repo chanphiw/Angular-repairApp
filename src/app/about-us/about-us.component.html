@@ -1,0 +1,119 @@
+<!-- Hero Section -->
+<section class="relative bg-gradient-to-br from-blue-600 to-purple-700 text-white py-20">
+  <div class="absolute inset-0 opacity-20"
+    style="background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center;">
+  </div>
+  <div class="container mx-auto px-4 relative z-10">
+    <div class="text-center max-w-3xl mx-auto">
+      <h1 class="text-5xl font-bold mb-6 animate-fade-in-up">About RepairApp</h1>
+      <p class="text-xl leading-relaxed animate-fade-in-up" style="animation-delay: 0.1s;">
+        We're passionate about bringing your devices back to life with expert care and genuine parts. Founded in 2010,
+        we've become the trusted choice for thousands of customers.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Our Story Section -->
+<section class="py-20 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 class="text-4xl font-bold mb-6 text-gray-800">Our Story</h2>
+        <p class="text-lg text-gray-600 mb-4 leading-relaxed">
+          RepairApp started with a simple mission: to provide honest, reliable, and affordable repair services for all
+          electronic devices. What began as a small workshop has grown into a leading repair service provider.
+        </p>
+        <p class="text-lg text-gray-600 mb-4 leading-relaxed">
+          Over the years, we've repaired over 50,000 devices and built lasting relationships with our customers. Our
+          commitment to quality and customer satisfaction remains unchanged.
+        </p>
+        <p class="text-lg text-gray-600 leading-relaxed">
+          Today, we continue to invest in the latest tools, training, and techniques to serve you better.
+        </p>
+      </div>
+      <div>
+        <img
+          src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+          alt="Our Workshop" class="rounded-lg shadow-2xl">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Milestones Section -->
+<section class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-gray-800 mb-4">Our Journey</h2>
+      <p class="text-xl text-gray-600">Key milestones in our growth</p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="text-center" *ngFor="let milestone of milestones">
+        <div
+          class="bg-blue-600 text-white text-3xl font-bold rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-4">
+          {{ milestone.year }}
+        </div>
+        <h3 class="text-xl font-bold text-gray-800 mb-2">{{ milestone.title }}</h3>
+        <p class="text-gray-600">{{ milestone.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Our Values Section -->
+<section class="py-20 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-gray-800 mb-4">Our Values</h2>
+      <p class="text-xl text-gray-600">What drives us every day</p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="card bg-white shadow-xl border border-gray-100 hover:shadow-2xl transition-all"
+        *ngFor="let value of values">
+        <div class="card-body text-center p-8">
+          <div class="text-5xl mb-4">{{ value.icon }}</div>
+          <h3 class="text-xl font-bold text-gray-800 mb-3">{{ value.title }}</h3>
+          <p class="text-gray-600">{{ value.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Team Section -->
+<section class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-gray-800 mb-4">Meet Our Team</h2>
+      <p class="text-xl text-gray-600">Expert technicians dedicated to your service</p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="card bg-white shadow-xl hover:shadow-2xl transition-all" *ngFor="let member of teamMembers">
+        <figure class="px-0 pt-0">
+          <img [src]="member.image" [alt]="member.name" class="w-full h-64 object-cover">
+        </figure>
+        <div class="card-body text-center">
+          <h3 class="card-title justify-center text-xl">{{ member.name }}</h3>
+          <p class="text-blue-600 font-semibold">{{ member.position }}</p>
+          <p class="text-gray-600">{{ member.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-20 bg-gradient-to-r from-blue-600 to-purple-700 text-white">
+  <div class="container mx-auto px-4 text-center">
+    <h2 class="text-4xl font-bold mb-6">Ready to Experience Our Service?</h2>
+    <p class="text-xl mb-8 max-w-2xl mx-auto">
+      Join thousands of satisfied customers who trust us with their device repairs.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a routerLink="/contact" class="btn btn-accent btn-lg">Contact Us</a>
+      <a routerLink="/our-services"
+        class="btn btn-outline btn-lg text-white border-white hover:bg-white hover:text-purple-700">View Services</a>
+    </div>
+  </div>
+</section>

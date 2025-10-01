@@ -1,0 +1,194 @@
+<!-- Hero Section -->
+<section class="relative bg-gradient-to-br from-blue-600 to-purple-700 text-white py-20">
+  <div class="container mx-auto px-4">
+    <div class="text-center max-w-3xl mx-auto">
+      <h1 class="text-5xl font-bold mb-6">Contact Us</h1>
+      <p class="text-xl leading-relaxed">
+        Have a question or need a repair? We're here to help! Get in touch with us today.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Info Cards -->
+<section class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+  <div class="container mx-auto px-4">
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+      <div *ngFor="let info of contactInfo" class="card bg-white shadow-xl hover:shadow-2xl transition-all text-center">
+        <div class="card-body">
+          <div class="text-4xl mb-3">{{ info.icon }}</div>
+          <h3 class="font-bold text-xl text-gray-800 mb-2">{{ info.title }}</h3>
+          <p class="text-gray-600" *ngIf="!info.link">{{ info.details }}</p>
+          <a *ngIf="info.link" [href]="info.link" class="text-blue-600 hover:text-blue-800 font-semibold">
+            {{ info.details }}
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Form & Map -->
+    <div class="grid md:grid-cols-2 gap-12">
+      <!-- Contact Form -->
+      <div class="card bg-white shadow-xl">
+        <div class="card-body">
+          <h2 class="card-title text-2xl mb-6 text-gray-800">Send Us a Message</h2>
+
+          <!-- Success Message -->
+          <div *ngIf="submitted" class="alert alert-success mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none"
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span>Thank you! We'll get back to you soon.</span>
+          </div>
+
+          <form (ngSubmit)="onSubmit()" #contactFormEl="ngForm">
+            <!-- Name -->
+            <div class="form-control mb-4">
+              <label class="label">
+                <span class="label-text font-semibold">Full Name *</span>
+              </label>
+              <input type="text" [(ngModel)]="contactForm.name" name="name" placeholder="John Doe"
+                class="input input-bordered w-full" required>
+            </div>
+
+            <!-- Email -->
+            <div class="form-control mb-4">
+              <label class="label">
+                <span class="label-text font-semibold">Email Address *</span>
+              </label>
+              <input type="email" [(ngModel)]="contactForm.email" name="email" placeholder="john@example.com"
+                class="input input-bordered w-full" required>
+            </div>
+
+            <!-- Phone -->
+            <div class="form-control mb-4">
+              <label class="label">
+                <span class="label-text font-semibold">Phone Number</span>
+              </label>
+              <input type="tel" [(ngModel)]="contactForm.phone" name="phone" placeholder="+1 (555) 123-4567"
+                class="input input-bordered w-full">
+            </div>
+
+            <!-- Device Type -->
+            <div class="form-control mb-4">
+              <label class="label">
+                <span class="label-text font-semibold">Device Type *</span>
+              </label>
+              <select [(ngModel)]="contactForm.device" name="device" class="select select-bordered w-full" required>
+                <option value="" disabled selected>Select device type</option>
+                <option *ngFor="let device of deviceTypes" [value]="device">{{ device }}</option>
+              </select>
+            </div>
+
+            <!-- Issue Description -->
+            <div class="form-control mb-4">
+              <label class="label">
+                <span class="label-text font-semibold">Issue Description *</span>
+              </label>
+              <input type="text" [(ngModel)]="contactForm.issue" name="issue"
+                placeholder="e.g., Cracked screen, Won't charge" class="input input-bordered w-full" required>
+            </div>
+
+            <!-- Message -->
+            <div class="form-control mb-6">
+              <label class="label">
+                <span class="label-text font-semibold">Additional Details</span>
+              </label>
+              <textarea [(ngModel)]="contactForm.message" name="message" class="textarea textarea-bordered h-24"
+                placeholder="Any additional information..."></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary w-full btn-lg" [disabled]="!contactFormEl.form.valid">
+              <span *ngIf="!submitted">Send Message</span>
+              <span *ngIf="submitted">Sent! ✓</span>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Map & Additional Info -->
+      <div>
+        <!-- Map Placeholder -->
+        <div class="card bg-white shadow-xl mb-6">
+          <div class="card-body p-0">
+            <div class="bg-gradient-to-br from-blue-100 to-purple-100 h-64 rounded-lg flex items-center justify-center">
+              <div class="text-center">
+                <div class="text-6xl mb-4">🗺️</div>
+                <p class="text-gray-600 font-semibold">Interactive Map</p>
+                <p class="text-sm text-gray-500">123 Repair Street, Tech City</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="card bg-white shadow-xl">
+          <div class="card-body">
+            <h3 class="font-bold text-xl text-gray-800 mb-4">Quick Links</h3>
+            <div class="space-y-3">
+              <a routerLink="/our-services" class="flex items-center text-blue-600 hover:text-blue-800 font-semibold">
+                <span class="mr-2">→</span> View Our Services
+              </a>
+              <a routerLink="/pricing" class="flex items-center text-blue-600 hover:text-blue-800 font-semibold">
+                <span class="mr-2">→</span> Check Pricing
+              </a>
+              <a routerLink="/about-us" class="flex items-center text-blue-600 hover:text-blue-800 font-semibold">
+                <span class="mr-2">→</span> About Us
+              </a>
+            </div>
+
+            <div class="divider"></div>
+
+            <h3 class="font-bold text-xl text-gray-800 mb-4">Follow Us</h3>
+            <div class="flex space-x-4">
+              <a href="#" class="btn btn-circle btn-outline">
+                <span class="text-xl">📘</span>
+              </a>
+              <a href="#" class="btn btn-circle btn-outline">
+                <span class="text-xl">🐦</span>
+              </a>
+              <a href="#" class="btn btn-circle btn-outline">
+                <span class="text-xl">📷</span>
+              </a>
+              <a href="#" class="btn btn-circle btn-outline">
+                <span class="text-xl">💼</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="py-20 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold text-gray-800 mb-4">Have Questions?</h2>
+      <p class="text-xl text-gray-600">Check out our <a routerLink="/pricing" class="text-blue-600 hover:underline">FAQ
+          section</a> or call us directly!</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+      <div class="text-center p-6">
+        <div class="text-4xl mb-3">⚡</div>
+        <h3 class="font-bold text-xl text-gray-800 mb-2">Quick Response</h3>
+        <p class="text-gray-600">We respond to all inquiries within 24 hours</p>
+      </div>
+      <div class="text-center p-6">
+        <div class="text-4xl mb-3">🎯</div>
+        <h3 class="font-bold text-xl text-gray-800 mb-2">Expert Advice</h3>
+        <p class="text-gray-600">Get professional recommendations</p>
+      </div>
+      <div class="text-center p-6">
+        <div class="text-4xl mb-3">💬</div>
+        <h3 class="font-bold text-xl text-gray-800 mb-2">Live Chat</h3>
+        <p class="text-gray-600">Chat with our support team</p>
+      </div>
+    </div>
+  </div>
+</section>
