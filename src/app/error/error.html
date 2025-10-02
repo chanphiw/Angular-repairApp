@@ -1,0 +1,48 @@
+<!-- Error Page with Alert -->
+<div class="error-container">
+  <div class="error-background"></div>
+
+  <div class="error-content">
+    <!-- Error Alert Card -->
+    <div class="error-alert">
+      <!-- Error Icon -->
+      <div class="error-icon-wrapper">
+        <div class="error-icon">
+          <span class="icon-large">⚠️</span>
+        </div>
+        <div class="error-pulse"></div>
+      </div>
+
+      <!-- Error Code -->
+      <div class="error-code">{{ errorCode }}</div>
+
+      <!-- Error Title -->
+      <h1 class="error-title">{{ errorTitle }}</h1>
+
+      <!-- Error Message -->
+      <p class="error-message">{{ errorMessage }}</p>
+
+      <!-- Action Buttons -->
+      <div class="error-actions">
+        <a routerLink="/" class="btn-home">
+          <span class="btn-icon">🏠</span>
+          <span>Back to Home</span>
+        </a>
+        <button (click)="goBack()" class="btn-back">
+          <span class="btn-icon">←</span>
+          <span>Go Back</span>
+        </button>
+      </div>
+
+      <!-- Additional Help -->
+      <div class="error-help">
+        <p>Need help? <a routerLink="/contact" class="help-link">Contact Support</a></p>
+      </div>
+    </div>
+
+    <!-- Floating Elements for Design -->
+    <div class="floating-element element-1">🔧</div>
+    <div class="floating-element element-2">⚙️</div>
+    <div class="floating-element element-3">🛠️</div>
+  </div>
+</div>

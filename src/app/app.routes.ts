@@ -6,6 +6,7 @@ import { PricingComponent } from './pricing/pricing.component';
 import { ContactComponent } from './contact/contact.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { ErrorComponent } from './error/error';
 
 export const routes: Routes = [
   { 
@@ -49,7 +50,13 @@ export const routes: Routes = [
     title: 'Register Page'
   },
   { 
+    path: 'error', 
+    component: ErrorComponent,
+    title: 'Error | Page Not Found'
+  },
+  { 
     path: '**', 
-    redirectTo: '' 
+    component: ErrorComponent,
+    title: 'Error 404 | Page Not Found'
   }
 ];
