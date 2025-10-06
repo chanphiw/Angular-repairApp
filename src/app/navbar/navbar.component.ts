@@ -13,6 +13,7 @@ export class NavbarComponent {
   menuOpen = false;
 
   toggleMenu() {
+    // Toggle the menu คือการเปิดหรือปิดเมนู
     this.menuOpen = !this.menuOpen;
   }
 
